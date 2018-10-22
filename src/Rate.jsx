@@ -22,7 +22,7 @@ export default class Rate extends React.Component {
     onChange: PropTypes.func,
     onHoverChange: PropTypes.func,
     className: PropTypes.string,
-    character: PropTypes.node,
+    character: PropTypes.arrayOf(PropTypes.node),
     tabIndex: PropTypes.number,
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
@@ -38,7 +38,7 @@ export default class Rate extends React.Component {
     style: {},
     prefixCls: 'rc-rate',
     onChange: noop,
-    character: '★',
+    character: ['★'],
     onHoverChange: noop,
     tabIndex: 0,
   };
@@ -229,7 +229,9 @@ export default class Rate extends React.Component {
           onClick={this.onClick}
           onHover={this.onHover}
           key={index}
-          character={character}
+          character={index < character.length  
+              ? character[index] 
+              : character[character.length - 1]}
           focused={focused}
         />
       );

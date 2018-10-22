@@ -3,6 +3,8 @@ import Rate from 'rc-rate';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../assets/index.less';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFrown, faMeh, faSmile, faGrinHearts, faGrin } from '@fortawesome/free-solid-svg-icons'
 
 function onChange(v) {
   console.log('selected star', v);
@@ -23,7 +25,7 @@ ReactDOM.render(
       onChange={onChange}
       style={{ fontSize: 50, marginTop: 24 }}
       allowHalf
-      character="$"
+      character={new Array("$")}
     />
     <br />
     <Rate
@@ -31,14 +33,46 @@ ReactDOM.render(
       onChange={onChange}
       style={{ fontSize: 50, marginTop: 24 }}
       allowHalf
-      character={<i className="anticon anticon-star" />}
+      character={new Array(<i className="anticon anticon-star" />)}
     />
     <br />
     <Rate
       defaultValue={2}
       onChange={onChange}
       style={{ fontSize: 50, marginTop: 24 }}
-      character={<i className="anticon anticon-star" />}
+      character={new Array(<i className="anticon anticon-star" />)}
+    />
+    <br />
+    <Rate
+      defaultValue={1}
+      onChange={onChange}
+      count={4}
+      style={{ fontSize: 50, marginTop: 24 }}
+      character={new Array(<FontAwesomeIcon icon={faFrown} />, <FontAwesomeIcon icon={faMeh} />, <FontAwesomeIcon icon={faSmile} />, <FontAwesomeIcon icon={faGrin} />)}
+    />
+    <br />
+    <Rate
+      defaultValue={2}
+      onChange={onChange}
+      count={4}
+      style={{ fontSize: 50, marginTop: 24 }}
+      character={new Array(<FontAwesomeIcon icon={faFrown} />, <FontAwesomeIcon icon={faMeh} />, <FontAwesomeIcon icon={faSmile} />, <FontAwesomeIcon icon={faGrin} />)}
+    />
+    <br />
+    <Rate
+      defaultValue={3}
+      onChange={onChange}
+      count={4}
+      style={{ fontSize: 50, marginTop: 24 }}
+      character={new Array(<FontAwesomeIcon icon={faFrown} />, <FontAwesomeIcon icon={faMeh} />, <FontAwesomeIcon icon={faSmile} />, <FontAwesomeIcon icon={faGrin} />)}
+    />
+    <br />
+    <Rate
+      defaultValue={4}
+      onChange={onChange}
+      count={4}
+      style={{ fontSize: 50, marginTop: 24 }}
+      character={new Array(<FontAwesomeIcon icon={faFrown} />, <FontAwesomeIcon icon={faMeh} />, <FontAwesomeIcon icon={faSmile} />, <FontAwesomeIcon icon={faGrin} />)}
     />
   </div>
 , document.getElementById('__react-content'));
