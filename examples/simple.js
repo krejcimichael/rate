@@ -1,10 +1,8 @@
 /* eslint no-console: 0 */
-import Rate from 'rc-rate';
+import Rate from 'cc-rate';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../assets/index.less';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFrown, faMeh, faSmile, faGrinHearts, faGrin } from '@fortawesome/free-solid-svg-icons'
 
 function onChange(v) {
   console.log('selected star', v);
@@ -25,7 +23,7 @@ ReactDOM.render(
       onChange={onChange}
       style={{ fontSize: 50, marginTop: 24 }}
       allowHalf
-      character={new Array("$")}
+      character={new Array("*", "$")}
     />
     <br />
     <Rate
@@ -43,7 +41,7 @@ ReactDOM.render(
       character={new Array(<i className="anticon anticon-star" />)}
     />
     <br />
-    <Rate
+    {/* <Rate
       defaultValue={1}
       onChange={onChange}
       count={4}
@@ -73,6 +71,6 @@ ReactDOM.render(
       count={4}
       style={{ fontSize: 50, marginTop: 24 }}
       character={new Array(<FontAwesomeIcon icon={faFrown} />, <FontAwesomeIcon icon={faMeh} />, <FontAwesomeIcon icon={faSmile} />, <FontAwesomeIcon icon={faGrin} />)}
-    />
+    /> */}
   </div>
 , document.getElementById('__react-content'));
